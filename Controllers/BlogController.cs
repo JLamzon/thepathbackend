@@ -13,27 +13,31 @@ namespace thepathbackend.Controllers
     public class BlogController : ControllerBase
     {
         private readonly BlogService _data;
-        public BlogController(BlogService dataFromService){
+        public BlogController(BlogService dataFromService)
+        {
             dataFromService = dataFromService;
         }
 
         [HttpPost]
         [Route("AddBlogItem")]
-        public bool AddBlogItem(BlogItemModel newBlogItem){
+        public bool AddBlogItem(BlogItemModel newBlogItem)
+        {
             return _data.AddBlogItem(newBlogItem);
         }
 
         [HttpGet]
         [Route("GetBlogItems")]
-        //
-        public IEnumerable<BlogItemModel> GetAllBlogItems(){
+
+        public IEnumerable<BlogItemModel> GetAllBlogItems()
+        {
             return _data.GetAllBlogItems();
         }
 
         [HttpGet]
         [Route("GetItemsByUserId/{UserId}")]
 
-        public IEnumerable<BlogItemModel> GetItemsByUserid(int userId){
+        public IEnumerable<BlogItemModel> GetItemsByUserid(int userId)
+        {
             return _data.GetItemsByUserid(userId);
         }
 
@@ -45,33 +49,38 @@ namespace thepathbackend.Controllers
 
         [HttpGet]
         [Route("GetItemsByDate/{date}")]
-        public IEnumerable<BlogItemModel>GetItemByDate(string date){
+        public IEnumerable<BlogItemModel> GetItemByDate(string date)
+        {
             return _data.GetItemsByDate(date);
         }
 
         [HttpGet]
         [Route("GetPublishedItems")]
 
-        public  IEnumerable<BlogItemModel> GetPublishedItems(){
+        public IEnumerable<BlogItemModel> GetPublishedItems()
+        {
             return _data.GetPublishedItems();
         }
 
         [HttpGet]
         [Route("GetItemsByTags/{Tag}")]
 
-        public List<BlogItemModel> GetItemsByTag(string Tag){
+        public List<BlogItemModel> GetItemsByTag(string Tag)
+        {
             return _data.GetItemsByTag(Tag);
         }
 
         [HttpGet]
         [Route("GetBlogItemById/{id}")]
-        public BlogItemModel GetBlogItemById(int id){
+        public BlogItemModel GetBlogItemById(int id)
+        {
             return _data.GetBlogItemById(id);
         }
 
         [HttpGet]
         [Route("UpdateBlogItem")]
-        public bool UpdateBlogItem(BlogItemModel BlogUpdate){
+        public bool UpdateBlogItem(BlogItemModel BlogUpdate)
+        {
             return _data.UpdateBlogItem(BlogUpdate);
         }
 
@@ -79,7 +88,8 @@ namespace thepathbackend.Controllers
         [HttpPost]
         [Route("DeleteBlogItem")]
 
-        public bool DeleteBlogItem(BlogItemModel BlogDelete){
+        public bool DeleteBlogItem(BlogItemModel BlogDelete)
+        {
             return _data.DeleteBlogItem(BlogDelete);
         }
     }

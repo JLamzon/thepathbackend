@@ -12,6 +12,7 @@ namespace thepathbackend.Services.Context
         //tables for models
         public DbSet<UserModel> UserInfo { get; set; }
         public DbSet<BlogItemModel> BlogInfo { get; set; }
+        public DbSet<SchoolsModel> SchoolInfo { get; set; }
 
         //constructor // to remove error on 'base' you need to add DbContext to the public class above
         public DataContext(DbContextOptions options): base(options)
