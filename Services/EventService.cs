@@ -16,10 +16,15 @@ namespace thepathbackend.Services
             _context = context;
         }
 
-        public IEnumerable<SchoolsModel> GetItemsByName(string Name)
+        public IEnumerable<EventItemModel> GetItemsByTitle(string title)
         {
-            return _context.SchoolInfo.Where(item => item.Name == Name);
+            return _context.EventInfo.Where(item => item.Title == title);
         }
+
+        // public IEnumerable<EventItemModel> GetItemsByDate(string date)
+        // {
+        //     return _context.EventInfo.Where(item => item.Date == date);
+        // }
 
     }
 }
