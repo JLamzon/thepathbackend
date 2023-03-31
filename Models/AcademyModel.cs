@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace thepathbackend.Models
 {
-    public class SchoolsModel
+    public class AcademyModel
     {
         public int? Id { get; set; }
         public string? Name { get; set; }

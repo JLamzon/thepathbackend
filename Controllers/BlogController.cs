@@ -62,13 +62,13 @@ namespace thepathbackend.Controllers
             return _data.GetPublishedItems();
         }
 
-        [HttpGet]
-        [Route("GetItemsByTags/{Tag}")]
+        // [HttpGet]
+        // [Route("GetItemsByTags/{Tag}")]
 
-        public List<BlogItemModel> GetItemsByTag(string Tag)
-        {
-            return _data.GetItemsByTag(Tag);
-        }
+        // public List<BlogItemModel> GetItemsByTag(string Tag)
+        // {
+        //     return _data.GetItemsByTag(Tag);
+        // }
 
         [HttpGet]
         [Route("GetBlogItemById/{id}")]

@@ -7,16 +7,16 @@ using thepathbackend.Services.Context;
 
 namespace thepathbackend.Services
 {
-    public class EventService
+    public class AcademyEventService
     {
         private readonly DataContext _context;
 
-        public EventService(DataContext context)
+        public AcademyEventService(DataContext context)
         {
             _context = context;
         }
 
-        public IEnumerable<EventItemModel> GetItemsByTitle(string title)
+        public IEnumerable<AcademyEventItemModel> GetItemsByTitle(string title)
         {
             return _context.EventInfo.Where(item => item.Title == title);
         }
