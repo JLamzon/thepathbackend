@@ -16,15 +16,39 @@ namespace thepathbackend.Services
             _context = context;
         }
 
-        public IEnumerable<AcademyEventItemModel> GetItemsByTitle(string title)
+        public IEnumerable<AcademyEventsModel> GetAllEventItems()
         {
-            return _context.EventInfo.Where(item => item.Title == title);
+            return _context.EventInfo;
         }
 
-        // public IEnumerable<EventItemModel> GetItemsByDate(string date)
+        public bool CreateEventItem(AcademyEventsModel newEventItem)
+        {
+            _context.Add(newEventItem);
+            return _context.SaveChanges() != 0;
+        }
+
+        public bool UpdateEventItem(AcademyEventsModel EventUpdate){
+            _context.Update<AcademyEventsModel>(EventUpdate);
+            return _context.SaveChanges() != 0;
+        }
+
+        public bool DeleteEventItem(AcademyEventsModel EventDelete)
+        {
+            EventDelete.isDeleted = true;
+            _context.Update<AcademyEventsModel>(EventDelete);
+            return _context.SaveChanges() != 0;
+        }
+
+        // public IEnumerable<AcademyEventsModel> GetEventsFromFriends()
         // {
         //     return _context.EventInfo.Where(item => item.Date == date);
         // }
+
+        // public IEnumerable<AcademyEventsModel> GetEventsFromAcademy()
+        // {
+        //     return _context.EventInfo.Where(item => item.Date == date);
+        // }
+
 
     }
 }

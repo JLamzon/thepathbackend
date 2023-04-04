@@ -11,8 +11,11 @@ namespace thepathbackend.Models
         public string? Username { get; set; }
         public string? Hash { get; set; }
         public string? salt { get; set; }
+        public string? FirstName { get; set; }
+        public string? LastName { get; set; }
+        public string? AboutMe { get; set; }
+        public string? image { get; set; }
 
-        //constructor
         public UserModel(){}
     }
 }

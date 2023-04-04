@@ -38,11 +38,34 @@ namespace thepathbackend.Services
         {
             return _context.BlogInfo.Where(item => item.Date == date);
         }
+        
 
         public IEnumerable<BlogItemModel> GetPublishedItems()
         {
             return _context.BlogInfo.Where(item => item.isPublish);
         }
+
+
+        public BlogItemModel GetBlogItemById(int id)
+        {
+            return _context.BlogInfo.SingleOrDefault(item => item.Id == id);
+        }
+
+
+        public bool UpdateBlogItem(BlogItemModel BlogUpdate)
+        {
+            _context.Update<BlogItemModel>(BlogUpdate);
+            return _context.SaveChanges() != 0;
+        }
+
+
+        public bool DeleteBlogItem(BlogItemModel BlogDelete)
+        {
+            BlogDelete.isDeleted = true;
+            _context.Update<BlogItemModel>(BlogDelete);
+            return _context.SaveChanges() != 0;
+        }
+
 
         // public List<BlogItemModel> GetItemsByTag(string Tag){
         //     List<BlogItemModel> AllBlogsWithTag = new List<BlogItemModel>();
@@ -66,22 +89,6 @@ namespace thepathbackend.Services
         //     return AllBlogsWithTag;
         // }
 
-        public BlogItemModel GetBlogItemById(int id)
-        {
-            return _context.BlogInfo.SingleOrDefault(item => item.Id == id);
-        }
 
-        public bool UpdateBlogItem(BlogItemModel BlogUpdate)
-        {
-            _context.Update<BlogItemModel>(BlogUpdate);
-            return _context.SaveChanges() != 0;
-        }
-
-        public bool DeleteBlogItem(BlogItemModel BlogDelete)
-        {
-            BlogDelete.isDeleted = true;
-            _context.Update<BlogItemModel>(BlogDelete);
-            return _context.SaveChanges() != 0;
-        }
     }
 }

@@ -20,41 +20,46 @@ namespace thepathbackend.Controllers
         private readonly UserService _data;
 
         //
-        public UserController(UserService dataFromService){
+        public UserController(UserService dataFromService)
+        {
             _data = dataFromService;
         }
-        
-        
+
+
         //login endpoint
         [HttpPost]
         [Route("Login")]
-        public IActionResult Login([FromBody] LoginDTO User){
+        public IActionResult Login([FromBody] LoginDTO User)
+        {
             return _data.Login(User);
         }
 
         //add a user endpoint
-            // if th user already exists
-            // if they do not exist, we can have account created
-            // else throw a false
+        // if th user already exists
+        // if they do not exist, we can have account created
+        // else throw a false
 
-            //can also be written = [HttpPost"AddUser]
-            [HttpPost]
-            [Route("AddUser")]
+        //can also be written = [HttpPost"AddUser]
+        [HttpPost]
+        [Route("AddUser")]
 
-            public bool AddUser(CreateAccountDTO UserToAdd){
-                return _data.AddUser(UserToAdd);
-            }
+        public bool AddUser(CreateAccountDTO UserToAdd)
+        {
+            return _data.AddUser(UserToAdd);
+        }
 
         //update user account
         [HttpPost]
         [Route("UpdateUser")]
-        public bool UpdateUser(UserModel userToUpdate){
+        public bool UpdateUser(UserModel userToUpdate)
+        {
             return _data.UpdateUser(userToUpdate);
         }
 
         [HttpPost]
         [Route("UpdateUser/{id}/{username}")]
-        public bool UpdateUser(int id, string username){
+        public bool UpdateUser(int id, string username)
+        {
             return _data.UpdateUsername(id, username);
         }
 
@@ -62,7 +67,8 @@ namespace thepathbackend.Controllers
         //delete user account
         [HttpDelete]
         [Route("DeleteUser/{userToDelete}")]
-        public bool DeleteUser(string userToDelete){
+        public bool DeleteUser(string userToDelete)
+        {
             return _data.DeleteUser(userToDelete);
         }
     }

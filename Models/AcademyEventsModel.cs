@@ -5,18 +5,20 @@ using System.Threading.Tasks;
 
 namespace thepathbackend.Models
 {
-    public class BlogItemModel
+    public class AcademyEventsModel
     {
+        
         public int Id { get; set; }
-        public int Userid { get; set; }
-        public string? PublishedName { get; set; }
-        public string? Date { get; set; }
+        public string? UserId { get; set; }
+        public int PublishedName { get; set; }
+        public DateTime? Date { get; set; }
         public string? Title { get; set; }
+        public string? Address { get; set; }
         public string? Description { get; set; }
         public bool isPublish { get; set; }
         public bool isDeleted { get; set; }
-        public string? Image { get; set; }
+        public string? image { get; set; }
 
-        public BlogItemModel(){}
+        public AcademyEventsModel() { }
     }
 }

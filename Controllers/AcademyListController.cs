@@ -13,7 +13,7 @@ namespace thepathbackend.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class AcademyController : ControllerBase
+    public class AcademyListController : ControllerBase
     {
         private static List<AcademyModel> _Academy = new List<AcademyModel>()
         {

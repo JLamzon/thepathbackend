@@ -15,7 +15,7 @@ namespace thepathbackend.Controllers
         private readonly BlogService _data;
         public BlogController(BlogService dataFromService)
         {
-            dataFromService = dataFromService;
+            _data = dataFromService;
         }
 
         [HttpPost]
