@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "blogbackend2": {
+    "thepathbackend": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,

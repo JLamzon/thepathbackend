@@ -8,6 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<UserService>();
 builder.Services.AddScoped<BlogService>();
 builder.Services.AddScoped<PasswordService>();
+builder.Services.AddScoped<AcademyEventService>();
+builder.Services.AddScoped<FriendService>();
 
 //how we connect database to api
 var connectionString = builder.Configuration.GetConnectionString("ThePathString");
