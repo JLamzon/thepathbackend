@@ -48,6 +48,11 @@ namespace thepathbackend.Controllers
             return _data.AddUser(UserToAdd);
         }
 
+        // public IEnumerable<BlogItemModel> GetAllUsers()
+        // {
+        //     return _data.GetAllUsers();
+        // }
+
         //update user account
         [HttpPost]
         [Route("UpdateUser")]

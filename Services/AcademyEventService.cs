@@ -39,16 +39,6 @@ namespace thepathbackend.Services
             return _context.SaveChanges() != 0;
         }
 
-        // public IEnumerable<AcademyEventsModel> GetEventsFromFriends()
-        // {
-        //     return _context.EventInfo.Where(item => item.Date == date);
-        // }
-
-        // public IEnumerable<AcademyEventsModel> GetEventsFromAcademy()
-        // {
-        //     return _context.EventInfo.Where(item => item.Date == date);
-        // }
-
 
     }
 }

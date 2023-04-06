@@ -22,6 +22,11 @@ namespace thepathbackend.Services
             _context = context;
         }
 
+        public IEnumerable<UserModel> GetAllUsers()
+        {
+            return _context.UserInfo;
+        }
+
 
         public bool DoesUserExist(string? Username)
         {

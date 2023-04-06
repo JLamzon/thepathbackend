@@ -9,18 +9,12 @@ namespace thepathbackend.Controllers;
 
     public class AcademyEventsController : ControllerBase
 {
-    //post
-        //no logic in user controller
-
-        //this tells usercontroller we can only read, not write
-
         private readonly AcademyEventService _data;
 
         public AcademyEventsController(AcademyEventService dataFromService)
         {
             _data = dataFromService;
         }
-
 
 
         [HttpGet]
@@ -34,8 +28,8 @@ namespace thepathbackend.Controllers;
 
         [HttpPost]
         [Route("CreateEvent")]
-        public bool CreateEventItem(AcademyEventsModel newEventItem){
-            return _data.CreateEventItem(newEventItem);
+        public bool CreateEventItem(AcademyEventsModel AddEvent){
+            return _data.CreateEventItem(AddEvent);
         }
 
 
@@ -45,7 +39,6 @@ namespace thepathbackend.Controllers;
         public bool UpdateEventItem(AcademyEventsModel EventUpdate){
             return _data.UpdateEventItem(EventUpdate);
         }
-
 
 
         [HttpGet]
