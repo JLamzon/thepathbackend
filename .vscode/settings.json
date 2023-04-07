@@ -13,5 +13,7 @@
         "thepathbackend",
         "usercontroller",
         "Userid"
-    ]
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/65ba254b-60ce-40d7-aadf-bbf6aa2bc515/resourceGroups/pathapi/providers/Microsoft.Web/sites/thepathapi",
+    "appService.deploySubpath": "publish"
 }

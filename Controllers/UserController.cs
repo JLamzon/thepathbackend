@@ -14,6 +14,7 @@ namespace thepathbackend.Controllers
     public class UserController : ControllerBase
     {
 
+
         //no logic in user controller
 
         //this tells usercontroller we can only read, not write
@@ -26,6 +27,14 @@ namespace thepathbackend.Controllers
         }
 
 
+        [HttpGet]
+        [Route("UserByUserName/{username}")]
+        public UserIdDTO GetUserByUsername(string username)
+        {
+            return _data.GetUserIdDTOByUsername(username);
+        }
+
+
         //login endpoint
         [HttpPost]
         [Route("Login")]
@@ -33,6 +42,7 @@ namespace thepathbackend.Controllers
         {
             return _data.Login(User);
         }
+
 
         //add a user endpoint
         // if th user already exists
@@ -42,6 +52,7 @@ namespace thepathbackend.Controllers
         //can also be written = [HttpPost"AddUser]
         [HttpPost]
         [Route("AddUser")]
+
 
         public bool AddUser(CreateAccountDTO UserToAdd)
         {

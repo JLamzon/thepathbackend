@@ -12,7 +12,7 @@ using thepathbackend.Services.Context;
 namespace thepathbackend.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230406002316_init")]
+    [Migration("20230407170407_init")]
     partial class init
     {
         /// <inheritdoc />
