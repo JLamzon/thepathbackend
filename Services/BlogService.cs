@@ -30,6 +30,7 @@ namespace thepathbackend.Services
             return _context.BlogInfo.Where(item => item.Userid == userId);
         }
 
+
         // public IEnumerable<BlogItemModel> GetItemsByCategory(string category){
         //     return _context.BlogInfo.Where(item => item.Category == category);
         // }
@@ -38,7 +39,7 @@ namespace thepathbackend.Services
         {
             return _context.BlogInfo.Where(item => item.Date == date);
         }
-        
+    
 
         public IEnumerable<BlogItemModel> GetPublishedItems()
         {

@@ -33,6 +33,7 @@ namespace thepathbackend.Controllers
             return _data.GetAllBlogItems();
         }
 
+
         [HttpGet]
         [Route("GetItemsByUserId/{UserId}")]
 
@@ -40,6 +41,7 @@ namespace thepathbackend.Controllers
         {
             return _data.GetItemsByUserid(userId);
         }
+
 
         // [HttpGet]
         // [Route("GetItemsByCategory/{category}")]

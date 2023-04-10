@@ -18,7 +18,7 @@ namespace thepathbackend.Services
 
         public IEnumerable<AcademyEventsModel> GetAllEventItems()
         {
-            return _context.EventInfo;
+            return _context.EventInfo.Where(item => item.isPublish);
         }
 
         public bool CreateEventItem(AcademyEventsModel newEventItem)
@@ -38,6 +38,12 @@ namespace thepathbackend.Services
             _context.Update<AcademyEventsModel>(EventDelete);
             return _context.SaveChanges() != 0;
         }
+
+
+        //         public AcademyEventsModel GetEventItemById(int id)
+        // {
+        //     return _context.EventInfo.SingleOrDefault(item => item.Id == id);
+        // }
 
 
     }
