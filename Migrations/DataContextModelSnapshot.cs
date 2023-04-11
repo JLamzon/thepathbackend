@@ -151,8 +151,17 @@ namespace thepathbackend.Migrations
                     b.Property<string>("AboutMe")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("AcademyName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Belt")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("FirstName")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("HasPasswordChanged")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Hash")
                         .HasColumnType("nvarchar(max)");

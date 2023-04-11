@@ -26,6 +26,15 @@ namespace thepathbackend.Controllers
             _data = dataFromService;
         }
 
+        [HttpGet]
+        [Route("GetAllUsers")]
+
+        public IEnumerable<UserModel> GetAllUsers()
+        {
+            return _data.GetAllUsers();
+        }
+
+
 
         [HttpGet]
         [Route("UserByUserName/{username}")]

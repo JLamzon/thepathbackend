@@ -21,6 +21,14 @@ namespace thepathbackend.Services
             return _context.EventInfo.Where(item => item.isPublish);
         }
 
+
+        // public IEnumerable<AcademyModel> GetAllEventItemsByAcademyId(int id)
+        // {
+        //     return _context.SchoolInfo.Where(item => item.Id == id);
+        // }
+
+
+
         public bool CreateEventItem(AcademyEventsModel newEventItem)
         {
             _context.Add(newEventItem);

@@ -5,12 +5,10 @@ using System.Threading.Tasks;
 
 namespace thepathbackend.Models
 {
-    public class UserModel
+    public class UserProfile
     {
         public int Id { get; set; }
         public string? Username { get; set; }
-        public string? Hash { get; set; }
-        public string? salt { get; set; }
         public string? FirstName { get; set; }
         public string? LastName { get; set; }
         public string? AboutMe { get; set; }
@@ -18,10 +16,6 @@ namespace thepathbackend.Models
         public string? AcademyName { get; set; }
         public string? Belt { get; set; }
 
-        public bool HasPasswordChanged { get; set; }
-
-        public UserModel(){
-            HasPasswordChanged = false;
-        }
+        public UserProfile(){}
     }
 }
