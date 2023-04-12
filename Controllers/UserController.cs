@@ -61,8 +61,6 @@ namespace thepathbackend.Controllers
         //can also be written = [HttpPost"AddUser]
         [HttpPost]
         [Route("AddUser")]
-
-
         public bool AddUser(CreateAccountDTO UserToAdd)
         {
             return _data.AddUser(UserToAdd);
@@ -85,7 +83,14 @@ namespace thepathbackend.Controllers
         [Route("UpdateUser/{id}/{username}")]
         public bool UpdateUser(int id, string username)
         {
-            return _data.UpdateUsername(id, username);
+            return _data.UpdateUser(id, username);
+        }
+
+        [HttpPut]
+        [Route("UpdateUser/{id}")]
+        public bool UpdateUser(int id, [FromBody] UserProfile UserProfile)
+        {
+            return _data.UpdateUsername(id, UserProfile.FirstName, UserProfile.LastName, UserProfile.AboutMe, UserProfile.image, UserProfile.AcademyName, UserProfile.Belt);
         }
 
 
@@ -96,5 +101,10 @@ namespace thepathbackend.Controllers
         {
             return _data.DeleteUser(userToDelete);
         }
+
+        // [HttpPut]
+        // public IActionResult UpdateUser(int id, string username){
+        //     var updatedBook = _data.
+        // }
     }
 }

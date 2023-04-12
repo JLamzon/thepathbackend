@@ -11,6 +11,7 @@ using System.Text;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace thepathbackend.Services
 {
@@ -26,6 +27,8 @@ namespace thepathbackend.Services
         {
             return _context.UserInfo;
         }
+
+
 
 
         public bool DoesUserExist(string? Username)
@@ -153,6 +156,7 @@ namespace thepathbackend.Services
             return _context.SaveChanges() != 0;
         }
 
+
         public bool UpdateUser(int id, string username)
         {
             //This one is sending over just the id and username
@@ -166,12 +170,14 @@ namespace thepathbackend.Services
                 foundUser.Username = username;
                 _context.Update<UserModel>(foundUser);
                 result = _context.SaveChanges() != 0;
+
             }
             return result;
         }
 
 
-        public UserModel GetUserById(int id)
+
+        public UserModel? GetUserById(int id)
         {
             return _context.UserInfo.SingleOrDefault(UserModel => UserModel.Id == id);
         }
@@ -191,21 +197,42 @@ namespace thepathbackend.Services
             return result;
         }
 
-        public bool UpdateUsername(int id, string username)
+        public bool UpdateUsername(int id, string firstName, string lastName, string aboutMe, string image, string academyName, string belt)
         {
-            //This one is sending over just the id and username
-            //We have to get the object to then be updated
-            UserModel foundUser = GetUserById(id);
             bool result = false;
+
+            // Get the user from the database
+            UserModel foundUser = GetUserById(id);
+
             if (foundUser != null)
             {
-                //A user was found
-                foundUser.Username = username;
-                _context.Update<UserModel>(foundUser);
+                // Update the user's properties
+                foundUser.FirstName = firstName;
+                foundUser.LastName = lastName;
+                foundUser.AboutMe = aboutMe;
+                foundUser.image = image;
+                foundUser.AcademyName = academyName;
+                foundUser.Belt = belt;
+
+                // Mark the user as modified and exclude the Hash and salt properties
+                _context.Entry(foundUser).State = EntityState.Modified;
+                _context.Entry(foundUser).Property(u => u.Hash).IsModified = false;
+                _context.Entry(foundUser).Property(u => u.salt).IsModified = false;
+                _context.Entry(foundUser).Property(u => u.FirstName).IsModified = true;
+                _context.Entry(foundUser).Property(u => u.LastName).IsModified = true;
+                _context.Entry(foundUser).Property(u => u.AboutMe).IsModified = true;
+                _context.Entry(foundUser).Property(u => u.image).IsModified = true;
+                _context.Entry(foundUser).Property(u => u.AcademyName).IsModified = true;
+                _context.Entry(foundUser).Property(u => u.Belt).IsModified = true;
+
+                // Save changes to the database
+
                 result = _context.SaveChanges() != 0;
             }
+
             return result;
         }
+
 
         public UserIdDTO GetUserIdDTOByUsername(string username)
         {
