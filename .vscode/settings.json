@@ -15,5 +15,19 @@
         "Userid"
     ],
     "appService.defaultWebAppToDeploy": "/subscriptions/65ba254b-60ce-40d7-aadf-bbf6aa2bc515/resourceGroups/pathapi/providers/Microsoft.Web/sites/thepathapi",
-    "appService.deploySubpath": "publish"
+    "appService.deploySubpath": "publish",
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "thepathbe.database.windows.net",
+            "port": 1433,
+            "driver": "MySQL",
+            "name": "ThePathApi",
+            "database": "thepathbe",
+            "username": "AcademyBlogAdmin"
+        }
+    ]
 }

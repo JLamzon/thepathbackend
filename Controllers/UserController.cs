@@ -52,6 +52,12 @@ namespace thepathbackend.Controllers
             return _data.Login(User);
         }
 
+        [HttpGet]
+        [Route("GetUserById/{id}")]
+        public UserModel GetUserById(int id)
+        {
+            return _data.GetUserById(id);
+        }
 
         //add a user endpoint
         // if th user already exists
@@ -90,7 +96,7 @@ namespace thepathbackend.Controllers
         [Route("UpdateUser/{id}")]
         public bool UpdateUser(int id, [FromBody] UserProfile UserProfile)
         {
-            return _data.UpdateUsername(id, UserProfile.FirstName, UserProfile.LastName, UserProfile.AboutMe, UserProfile.image, UserProfile.AcademyName, UserProfile.Belt);
+            return _data.UpdateUsername(id, UserProfile.Username, UserProfile.FirstName, UserProfile.LastName, UserProfile.AboutMe, UserProfile.image, UserProfile.AcademyName, UserProfile.Belt);
         }
 
 

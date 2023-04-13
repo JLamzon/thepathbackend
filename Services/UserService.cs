@@ -197,7 +197,7 @@ namespace thepathbackend.Services
             return result;
         }
 
-        public bool UpdateUsername(int id, string firstName, string lastName, string aboutMe, string image, string academyName, string belt)
+        public bool UpdateUsername(int id, string userName, string firstName, string lastName, string aboutMe, string image, string academyName, string belt)
         {
             bool result = false;
 
@@ -207,6 +207,7 @@ namespace thepathbackend.Services
             if (foundUser != null)
             {
                 // Update the user's properties
+                foundUser.Username = userName;
                 foundUser.FirstName = firstName;
                 foundUser.LastName = lastName;
                 foundUser.AboutMe = aboutMe;
@@ -218,6 +219,7 @@ namespace thepathbackend.Services
                 _context.Entry(foundUser).State = EntityState.Modified;
                 _context.Entry(foundUser).Property(u => u.Hash).IsModified = false;
                 _context.Entry(foundUser).Property(u => u.salt).IsModified = false;
+                _context.Entry(foundUser).Property(u => u.Username).IsModified = true;
                 _context.Entry(foundUser).Property(u => u.FirstName).IsModified = true;
                 _context.Entry(foundUser).Property(u => u.LastName).IsModified = true;
                 _context.Entry(foundUser).Property(u => u.AboutMe).IsModified = true;
