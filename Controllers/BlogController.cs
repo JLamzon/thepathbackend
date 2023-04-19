@@ -64,13 +64,6 @@ namespace thepathbackend.Controllers
             return _data.GetPublishedItems();
         }
 
-        // [HttpGet]
-        // [Route("GetItemsByTags/{Tag}")]
-
-        // public List<BlogItemModel> GetItemsByTag(string Tag)
-        // {
-        //     return _data.GetItemsByTag(Tag);
-        // }
 
         [HttpGet]
         [Route("GetBlogItemById/{id}")]
@@ -79,7 +72,7 @@ namespace thepathbackend.Controllers
             return _data.GetBlogItemById(id);
         }
 
-        [HttpGet]
+        [HttpPut]
         [Route("UpdateBlogItem")]
         public bool UpdateBlogItem(BlogItemModel BlogUpdate)
         {

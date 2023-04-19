@@ -30,11 +30,6 @@ namespace thepathbackend.Services
             return _context.BlogInfo.Where(item => item.Userid == userId);
         }
 
-
-        // public IEnumerable<BlogItemModel> GetItemsByCategory(string category){
-        //     return _context.BlogInfo.Where(item => item.Category == category);
-        // }
-
         public IEnumerable<BlogItemModel> GetItemsByDate(string date)
         {
             return _context.BlogInfo.Where(item => item.Date == date);
@@ -66,30 +61,6 @@ namespace thepathbackend.Services
             _context.Update<BlogItemModel>(BlogDelete);
             return _context.SaveChanges() != 0;
         }
-
-
-        // public List<BlogItemModel> GetItemsByTag(string Tag){
-        //     List<BlogItemModel> AllBlogsWithTag = new List<BlogItemModel>();
-        //     var allItems = GetAllBlogItems().ToList();
-
-        //     for (int i = 0; i < allItems.Count; i++){
-        //         BlogItemModel Item = allItems[i];
-        //         //calling Tags from blog item model
-        //         var itemArray = Item.Tags.Split(",");
-
-        //         for (int j = 0; j < itemArray.Length; j++)
-        //         {
-
-        //             //checking if item array has the tag we're looking for
-        //             if (itemArray[j].Contains(Tag)){
-        //                 AllBlogsWithTag.Add(Item);
-        //             }
-        //         }
-        //     }
-
-        //     return AllBlogsWithTag;
-        // }
-
 
     }
 }

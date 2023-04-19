@@ -20,7 +20,6 @@ namespace thepathbackend.Services.Context
         public DataContext(DbContextOptions options): base(options)
         {}
 
-
         //this is used to build out the backendtable for us
         protected override void OnModelCreating(ModelBuilder builder){
             //this codes help build the table for us.  takes our user model properties to tables into our models

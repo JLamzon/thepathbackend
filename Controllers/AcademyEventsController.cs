@@ -27,7 +27,7 @@ public class AcademyEventsController : ControllerBase
 
     // public IEnumerable<AcademyEventsModel> GetAllEventItemsByAcademyId(int Id)
     // {
-    //     // return _data.GetAllEventItemsByAcademyId(Id);
+    //     return _data.GetAllEventItemsByAcademyId(Id);
     // }
 
 

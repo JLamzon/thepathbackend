@@ -29,8 +29,6 @@ namespace thepathbackend.Services
         }
 
 
-
-
         public bool DoesUserExist(string? Username)
         {
             //check the database table if username exists
