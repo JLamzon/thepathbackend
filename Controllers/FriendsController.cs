@@ -32,7 +32,7 @@ namespace thepathbackend.Controllers
 
         //add a friend
         [HttpPost]
-        [Route("AddAFriend/{friendId}/{friendUserId}/{true}")]
+        [Route("AddAFriend/{userId}/{friendUserId}")]
         public bool AddAFriend(FriendsModel newFriendItem){
             return _data.AddAFriend(newFriendItem);
     

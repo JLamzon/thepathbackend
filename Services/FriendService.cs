@@ -32,7 +32,7 @@ namespace thepathbackend.Services
         //add a friend
         public bool AddAFriend(FriendsModel newFriendItem)
         {
-             newFriendItem.Id = _context.FriendInfo.Max(f => f.Id) + 1;
+            //  newFriendItem.Id = _context.FriendInfo.Max(f => f.Id) + 1;
             _context.FriendInfo.Add(newFriendItem);
             return _context.SaveChanges() != 0;
         }

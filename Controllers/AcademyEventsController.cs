@@ -39,7 +39,7 @@ public class AcademyEventsController : ControllerBase
     }
 
 
-    [HttpGet]
+    [HttpPut]
     [Route("UpdateEvent")]
 
     public bool UpdateEventItem(AcademyEventsModel EventUpdate)
