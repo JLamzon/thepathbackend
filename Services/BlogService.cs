@@ -47,12 +47,12 @@ namespace thepathbackend.Services
             return _context.BlogInfo.SingleOrDefault(item => item.Id == id);
         }
 
-
         public bool UpdateBlogItem(BlogItemModel BlogUpdate)
         {
             _context.Update<BlogItemModel>(BlogUpdate);
             return _context.SaveChanges() != 0;
         }
+        
 
 
         public bool DeleteBlogItem(BlogItemModel BlogDelete)
@@ -61,6 +61,5 @@ namespace thepathbackend.Services
             _context.Update<BlogItemModel>(BlogDelete);
             return _context.SaveChanges() != 0;
         }
-
     }
 }

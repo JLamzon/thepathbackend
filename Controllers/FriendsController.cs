@@ -30,12 +30,28 @@ namespace thepathbackend.Controllers
             return _data.GetAllFriends();
         }
 
+
+[HttpGet]
+[Route("GetUserFriends/{userId}")]
+public IEnumerable<int> GetUserFriends(int userId)
+{
+    return _data.GetUserFriends(userId);
+}
+
         //add a friend
         [HttpPost]
         [Route("AddAFriend/{userId}/{friendUserId}")]
-        public bool AddAFriend(FriendsModel newFriendItem){
+        public bool AddAFriend(FriendsModel newFriendItem)
+        {
             return _data.AddAFriend(newFriendItem);
-    
+        }
+
+        //friend accept or deny
+        [HttpPut]
+        [Route("FriendUpdate/{Id}/{userId}/{friendUserId}/{isAccepted}/{isDenied}")]
+        public bool UpdateFriendItem(FriendsModel friendUpdate)
+        {
+            return _data.UpdateFriendItem(friendUpdate);
+        }
     }
-}
 }
