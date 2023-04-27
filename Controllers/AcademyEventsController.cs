@@ -25,12 +25,6 @@ public class AcademyEventsController : ControllerBase
         return _data.GetAllEventItems();
     }
 
-    // public IEnumerable<AcademyEventsModel> GetAllEventItemsByAcademyId(int Id)
-    // {
-    //     return _data.GetAllEventItemsByAcademyId(Id);
-    // }
-
-
     [HttpPost]
     [Route("CreateEvent")]
     public bool CreateEventItem(AcademyEventsModel AddEvent)

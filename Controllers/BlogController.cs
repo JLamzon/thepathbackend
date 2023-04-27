@@ -43,12 +43,6 @@ namespace thepathbackend.Controllers
         }
 
 
-        // [HttpGet]
-        // [Route("GetItemsByCategory/{category}")]
-        // public IEnumerable<BlogItemModel> GetItemsByCategory(string category){
-        //     return _data.GetItemsByCategory(category);
-        // }
-
         [HttpGet]
         [Route("GetItemsByDate/{date}")]
         public IEnumerable<BlogItemModel> GetItemByDate(string date)

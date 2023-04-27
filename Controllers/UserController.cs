@@ -72,11 +72,6 @@ namespace thepathbackend.Controllers
             return _data.AddUser(UserToAdd);
         }
 
-        // public IEnumerable<BlogItemModel> GetAllUsers()
-        // {
-        //     return _data.GetAllUsers();
-        // }
-
         //update user account
         [HttpPost]
         [Route("UpdateUser")]
@@ -99,7 +94,6 @@ namespace thepathbackend.Controllers
             return _data.UpdateUsername(id, UserProfile.Username, UserProfile.FirstName, UserProfile.LastName, UserProfile.AboutMe, UserProfile.image, UserProfile.AcademyName, UserProfile.Belt);
         }
 
-
         //delete user account
         [HttpDelete]
         [Route("DeleteUser/{userToDelete}")]
@@ -108,9 +102,5 @@ namespace thepathbackend.Controllers
             return _data.DeleteUser(userToDelete);
         }
 
-        // [HttpPut]
-        // public IActionResult UpdateUser(int id, string username){
-        //     var updatedBook = _data.
-        // }
     }
 }
