@@ -30,15 +30,16 @@ namespace thepathbackend.Services
         }
 
 
-        // public IEnumerable<FriendsModel> GetUserFriends(int userId)
-        // {
-        //     return _context.FriendInfo.Where(friend => friend.UserId == userId || friend.FriendUserId == userId);
-        // }
+        public IEnumerable<FriendsModel> GetAllUserFriendsList(int userId)
+        {
+            return _context.FriendInfo.Where(friend => friend.UserId == userId || friend.FriendUserId == userId);
+        }
+
 
         public IEnumerable<int> GetUserFriends(int userId)
         {
             var friendIds = new List<int>();
-            var friendModels = _context.FriendInfo.Where(friend => friend.UserId == userId || friend.FriendUserId == userId).ToList();
+            var friendModels = _context.FriendInfo.Where(friend => friend.UserId == userId || friend.FriendUserId == userId && friend.isAccepted == true).ToList();
 
             foreach (var friendModel in friendModels)
             {
