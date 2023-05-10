@@ -39,7 +39,7 @@ namespace thepathbackend.Services
         public IEnumerable<int> GetUserFriends(int userId)
         {
             var friendIds = new List<int>();
-            var friendModels = _context.FriendInfo.Where(friend => friend.UserId == userId || friend.FriendUserId == userId && friend.isAccepted == true).ToList();
+            var friendModels = _context.FriendInfo.Where(friend => friend.UserId == userId && friend.isAccepted == true || friend.FriendUserId == userId && friend.isAccepted == true).ToList();
 
             foreach (var friendModel in friendModels)
             {
