@@ -7,9 +7,9 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddScoped<UserService>();
 builder.Services.AddScoped<BlogService>();
-builder.Services.AddScoped<PasswordService>();
 builder.Services.AddScoped<AcademyEventService>();
 builder.Services.AddScoped<FriendService>();
+builder.Services.AddScoped<JoinEventService>();
 
 //how we connect database to api
 var connectionString = builder.Configuration.GetConnectionString("ThePathString");

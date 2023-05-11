@@ -39,12 +39,12 @@ namespace thepathbackend.Controllers
         }
 
 
-[HttpGet]
-[Route("GetUserFriends/{userId}")]
-public IEnumerable<int> GetUserFriends(int userId)
-{
-    return _data.GetUserFriends(userId);
-}
+        [HttpGet]
+        [Route("GetUserFriends/{userId}")]
+        public IEnumerable<int> GetUserFriends(int userId)
+        {
+            return _data.GetUserFriends(userId);
+        }
 
 
         //add a friend

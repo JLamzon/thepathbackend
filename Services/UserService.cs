@@ -168,7 +168,6 @@ namespace thepathbackend.Services
                 foundUser.Username = username;
                 _context.Update<UserModel>(foundUser);
                 result = _context.SaveChanges() != 0;
-
             }
             return result;
         }
@@ -229,7 +228,6 @@ namespace thepathbackend.Services
 
                 result = _context.SaveChanges() != 0;
             }
-
             return result;
         }
 
