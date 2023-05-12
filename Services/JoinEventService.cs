@@ -29,18 +29,16 @@ namespace thepathbackend.Services
         //Join Event
             public bool JoinEvent(JoinEventModel joinEventItem)
         {
-            joinEventItem.isJoined = true;
+            joinEventItem.isJoined = false;
             _context.JoinEventInfo.Add(joinEventItem);
             return _context.SaveChanges() != 0;
         }
-
 
         //GetAllJoinedEvents
             public IEnumerable<JoinEventModel> GetAllEventsJoined()
         {
             return _context.JoinEventInfo;
         }
-
 
         //GetAllEventsByUserId
         public IEnumerable<JoinEventModel> GetAllEventsByUserId(int userId)

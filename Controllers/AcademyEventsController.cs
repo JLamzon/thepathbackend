@@ -19,7 +19,6 @@ public class AcademyEventsController : ControllerBase
 
     [HttpGet]
     [Route("GetEventItems")]
-
     public IEnumerable<AcademyEventsModel> GetAllEventItems()
     {
         return _data.GetAllEventItems();

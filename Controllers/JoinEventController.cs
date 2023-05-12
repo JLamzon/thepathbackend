@@ -20,20 +20,26 @@ namespace thepathbackend.Controllers
         {
             _data = dataFromService;
         }
-        
-        [HttpPost]
-        [Route("JoinEvent/{userId}")]
-        public bool AddAFriend(JoinEventModel joinEvent)
-        {
-            return _data.JoinEvent(joinEvent);
-        }
 
         [HttpPost]
-        [Route("GetAllJoinedEvents")]
+        [Route("JoinEvent/{eventId}/{userId}")]
+        public bool JoinEvent(JoinEventModel userJoined)
+        {
+            return _data.JoinEvent(userJoined);
+        }
+
+        [HttpGet]
+        [Route("GetAllEventsByUserId/{userId}")]
+        public IEnumerable<JoinEventModel> GetAllEventsByUserId(int userId)
+        {
+            return _data.GetAllEventsByUserId(userId);
+        }
+
+        [HttpGet]
+        [Route("GetAllEventsJoined")]
         public IEnumerable<JoinEventModel> GetAllEventsJoined()
         {
             return _data.GetAllEventsJoined();
         }
-        
     }
 }
