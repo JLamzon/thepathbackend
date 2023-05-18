@@ -69,6 +69,23 @@ namespace thepathbackend.Services
             // else throw a false
         }
 
+        public bool UpdatePassword(CreateAccountDTO newPassword)
+        {
+            bool result = false;
+            if (DoesUserExist(newPassword.Username))
+            {
+                UserModel userToUpdate = GetUserByUsername(newPassword.Username);
+                var hashPassword = HashPassword(newPassword.Password);
+                userToUpdate.salt = hashPassword.Salt;
+                userToUpdate.Hash = hashPassword.Hash;
+
+                result = _context.SaveChanges() != 0;
+            }
+
+            return result;
+        }
+
+
         //this also checks the password
         public PasswordDTO HashPassword(string? password)
         {

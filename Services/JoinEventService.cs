@@ -46,10 +46,5 @@ namespace thepathbackend.Services
             return _context.JoinEventInfo.Where(events => events.UserId == userId);
         }
 
-
-
-        //GetAllEventsJoinedByUserId
-
-
     }
 }

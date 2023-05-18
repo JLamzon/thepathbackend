@@ -72,6 +72,16 @@ namespace thepathbackend.Controllers
             return _data.AddUser(UserToAdd);
         }
 
+
+
+        [HttpPut]
+        [Route("UpdatePassword")]
+        public bool UpdatePassword(CreateAccountDTO UserToAdd)
+        {
+            return _data.UpdatePassword(UserToAdd);
+        }
+
+
         //update user account
         [HttpPost]
         [Route("UpdateUser")]

@@ -49,31 +49,6 @@ public class AcademyEventsController : ControllerBase
         return _data.DeleteEventItem(EventDelete);
     }
 
-
-
-    // [HttpGet]
-    // [Route("GetAcademyEvents")]
-
-    // public IEnumerable<AcademyEventsModel> GetEventsFromAcademy()
-    // {
-    //     return _data.GetEventsFromAcademy();
-    // }
-
-
-
-    // [HttpGet]
-    // [Route("GetFriendsEvents")]
-
-
-    // public IEnumerable<AcademyEventsModel> GetEventsFromFriends()
-    // {
-    //     return _data.GetEventsFromFriends();
-    // }
-
 }
-
-
-//get
-
 
 

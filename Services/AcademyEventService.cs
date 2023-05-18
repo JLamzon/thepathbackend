@@ -40,12 +40,5 @@ namespace thepathbackend.Services
             return _context.SaveChanges() != 0;
         }
 
-
-        //         public AcademyEventsModel GetEventItemById(int id)
-        // {
-        //     return _context.EventInfo.SingleOrDefault(item => item.Id == id);
-        // }
-
-
     }
 }
