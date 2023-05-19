@@ -190,6 +190,29 @@ namespace thepathbackend.Services
         }
 
 
+                public bool UpdateUserPassword(int id, string username, string Hash, string salt)
+        {
+            //This one is sending over just the id and username
+            //we have to get the object to then be updated
+            UserModel foundUser = GetUserById(id);
+            bool result = false;
+            //helper function
+            if (foundUser != null)
+            {
+                //A user was found
+                foundUser.Username = username;
+                foundUser.Hash = Hash;
+                foundUser.salt = salt;
+                _context.Update<UserModel>(foundUser);
+                result = _context.SaveChanges() != 0;
+            }
+            return result;
+        }
+
+
+
+
+
 
         public UserModel? GetUserById(int id)
         {
