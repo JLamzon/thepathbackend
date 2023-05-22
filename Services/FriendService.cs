@@ -97,22 +97,6 @@ namespace thepathbackend.Services
         }
 
 
-
-
-        // public bool DeleteFriend(FriendsModel isDeleted)
-        // {
-
-
-        //     if (DoesFriendExist(isDeleted.UserId, isDeleted.FriendUserId) || DoesFriendExist(isDeleted.FriendUserId, isDeleted.UserId))
-        //     {
-        //         isDeleted.isAccepted = false;
-        //         _context.SaveChanges();
-        //         return true;
-        //     }
-
-        //     return false;
-        // }
-
         public bool DeleteFriend(FriendsModel isDeleted)
         {
             FriendsModel? existingFriend = _context.FriendInfo
