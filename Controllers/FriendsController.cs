@@ -62,5 +62,14 @@ namespace thepathbackend.Controllers
         {
             return _data.UpdateFriendItem(friendUpdate);
         }
+
+
+        [HttpPut]
+        [Route("DeleteFriend/{userId}/{friendUserId}")]
+
+        public bool DeleteFriend(FriendsModel deleteFriend)
+        {
+            return _data.DeleteFriend(deleteFriend);
+        }
     }
 }

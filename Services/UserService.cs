@@ -210,10 +210,6 @@ namespace thepathbackend.Services
         }
 
 
-
-
-
-
         public UserModel? GetUserById(int id)
         {
             return _context.UserInfo.SingleOrDefault(UserModel => UserModel.Id == id);

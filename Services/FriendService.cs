@@ -77,10 +77,57 @@ namespace thepathbackend.Services
 
 
         //add or deny friend
-        public bool UpdateFriendItem(FriendsModel friendUpdate)
+        public bool UpdateFriendItem(FriendsModel friend)
         {
-            _context.Update<FriendsModel>(friendUpdate);
-            return _context.SaveChanges() != 0;
+            FriendsModel? existingFriend = _context.FriendInfo
+                .FirstOrDefault(f => (f.UserId == friend.UserId && f.FriendUserId == friend.FriendUserId)
+                                     || (f.UserId == friend.FriendUserId && f.FriendUserId == friend.UserId));
+
+            if (existingFriend != null)
+            {
+                existingFriend.isAccepted = true;
+            }
+            else
+            {
+                _context.FriendInfo.Add(friend);
+            }
+
+            _context.SaveChanges();
+            return true;
         }
+
+
+
+
+        // public bool DeleteFriend(FriendsModel isDeleted)
+        // {
+
+
+        //     if (DoesFriendExist(isDeleted.UserId, isDeleted.FriendUserId) || DoesFriendExist(isDeleted.FriendUserId, isDeleted.UserId))
+        //     {
+        //         isDeleted.isAccepted = false;
+        //         _context.SaveChanges();
+        //         return true;
+        //     }
+
+        //     return false;
+        // }
+
+        public bool DeleteFriend(FriendsModel isDeleted)
+        {
+            FriendsModel? existingFriend = _context.FriendInfo
+                .FirstOrDefault(f => f.UserId == isDeleted.UserId && f.FriendUserId == isDeleted.FriendUserId);
+
+            if (existingFriend != null)
+            {
+                existingFriend.isAccepted = false;
+                _context.SaveChanges();
+                return true;
+            }
+
+            return false; // If the friendship doesn't exist, return false.
+        }
+
+
     }
 }
