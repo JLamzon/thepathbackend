@@ -55,6 +55,7 @@ namespace thepathbackend.Controllers
             return _data.AddAFriend(newFriendItem);
         }
 
+
         //friend accept or deny
         [HttpPut]
         [Route("FriendUpdate/{Id}/{userId}/{friendUserId}/{isAccepted}/{isDenied}")]
@@ -62,7 +63,7 @@ namespace thepathbackend.Controllers
         {
             return _data.UpdateFriendItem(friendUpdate);
         }
-
+        
 
         [HttpPut]
         [Route("DeleteFriend/{userId}/{friendUserId}")]

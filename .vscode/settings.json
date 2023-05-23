@@ -22,11 +22,11 @@
                 "authProtocol": "default"
             },
             "previewLimit": 50,
-            "server": "thepathbe.database.windows.net",
+            "server": "apithepath.database.windows.net,",
             "port": 1433,
             "driver": "MySQL",
             "name": "ThePathApi",
-            "database": "thepathbe",
+            "database": "apithepath",
             "username": "AcademyBlogAdmin"
         }
     ]

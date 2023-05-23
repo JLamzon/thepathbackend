@@ -82,10 +82,18 @@ namespace thepathbackend.Services
             FriendsModel? existingFriend = _context.FriendInfo
                 .FirstOrDefault(f => (f.UserId == friend.UserId && f.FriendUserId == friend.FriendUserId)
                                      || (f.UserId == friend.FriendUserId && f.FriendUserId == friend.UserId));
-
             if (existingFriend != null)
             {
-                existingFriend.isAccepted = true;
+                if (friend.isAccepted)
+                {
+                    existingFriend.isAccepted = true;
+                    existingFriend.isDenied = false;
+                }
+                else if (friend.isDenied)
+                {
+                    existingFriend.isAccepted = false;
+                    existingFriend.isDenied = true;
+                }
             }
             else
             {
