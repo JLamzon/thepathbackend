@@ -76,6 +76,8 @@ namespace thepathbackend.Services
         }
 
 
+
+
         //add or deny friend
         public bool UpdateFriendItem(FriendsModel friend)
         {
@@ -103,6 +105,8 @@ namespace thepathbackend.Services
             _context.SaveChanges();
             return true;
         }
+
+
 
 
         public bool DeleteFriend(FriendsModel isDeleted)

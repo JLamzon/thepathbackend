@@ -190,7 +190,7 @@ namespace thepathbackend.Services
         }
 
 
-                public bool UpdateUserPassword(int id, string username, string Hash, string salt)
+        public bool UpdateUserPassword(int id, string username, string Hash, string salt)
         {
             //This one is sending over just the id and username
             //we have to get the object to then be updated

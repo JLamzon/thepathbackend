@@ -10,6 +10,7 @@ builder.Services.AddScoped<BlogService>();
 builder.Services.AddScoped<AcademyEventService>();
 builder.Services.AddScoped<FriendService>();
 builder.Services.AddScoped<JoinEventService>();
+builder.Services.AddScoped<JoinEventNotificationService>();
 
 //how we connect database to api
 var connectionString = builder.Configuration.GetConnectionString("ThePathString");
@@ -19,7 +20,7 @@ builder.Services.AddDbContext<DataContext>(options => options.UseSqlServer(conne
 builder.Services.AddCors(options => {
 options.AddPolicy("BlogPolicy", 
     builder => {
-        builder.WithOrigins("http://localhost:3000", "https://thepathwebapp.azurewebsites.net")
+        builder.WithOrigins("http://localhost:3000", "https://thepathwebapp.azurewebsites.net", "https://thefinalpathproject.azurewebsites.net")
         .AllowAnyHeader()
         .AllowAnyMethod();
     }

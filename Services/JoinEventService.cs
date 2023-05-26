@@ -34,6 +34,13 @@ namespace thepathbackend.Services
             return _context.SaveChanges() != 0;
         }
 
+            public bool JoinEventSeen(JoinEventModel joinEventItem)
+        {
+            joinEventItem.isJoined = false;
+            _context.JoinEventInfo.Add(joinEventItem);
+            return _context.SaveChanges() != 0;
+        }
+
         //GetAllJoinedEvents
             public IEnumerable<JoinEventModel> GetAllEventsJoined()
         {
