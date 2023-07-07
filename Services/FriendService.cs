@@ -29,12 +29,10 @@ namespace thepathbackend.Services
             return _context.FriendInfo;
         }
 
-
         public IEnumerable<FriendsModel> GetAllUserFriendsList(int userId)
         {
             return _context.FriendInfo.Where(friend => friend.UserId == userId || friend.FriendUserId == userId);
         }
-
 
         public IEnumerable<int> GetUserFriends(int userId)
         {
